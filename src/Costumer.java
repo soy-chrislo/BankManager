@@ -5,6 +5,7 @@ import java.util.GregorianCalendar;
 public class Costumer extends Person{
 
     private int registerNumber;
+    private final int rut;
     private static int registeredUsers;
     private double balance, salary;
     private boolean isWork, isEmployed, isIndependent, isNaturalPerson, isLegalPerson;
@@ -25,10 +26,11 @@ public class Costumer extends Person{
     }
 
     public Costumer(String name, int age, int id, int rut, int day, int month, int year, double balance, double salary, boolean isWork, boolean isEmployed, boolean isNaturalPerson) {
-        super(name, id, rut);
+        super(name, id);
         registeredUsers++;
         this.registerNumber = registeredUsers;
 
+        this.rut = rut;
         this.register = new GregorianCalendar(year, month - 1, day);
         this.balance = balance;
         this.salary = salary;
@@ -94,6 +96,10 @@ public class Costumer extends Person{
 
     public double getSalary() {
         return salary;
+    }
+
+    public int getRut() {
+        return rut;
     }
 
     public boolean isWork() {

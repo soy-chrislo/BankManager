@@ -1,6 +1,6 @@
 package Accounts;
 
-public class Account {
+abstract public class Account {
     private final String accountHolder;
     private int idAccount, currentBalance;
 

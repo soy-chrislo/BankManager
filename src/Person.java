@@ -1,13 +1,19 @@
-public class Person {
+abstract public class Person {
     private final String name;
-    private final int id, rut;
+    private final int id;
     private int age, phoneNumber;
     private String email;
 
-    public Person(String name, int id, int rut) {
+    public Person(String name, int id) {
+        this(name, id, -18, 00, "example@email.com");
+    }
+
+    public Person (String name, int id, int age, int phoneNumber, String email) {
         this.name = name;
         this.id = id;
-        this.rut = rut;
+        this.age = age;
+        this.phoneNumber = phoneNumber;
+        this.email = email;
     }
 
     public void incrementAge(int increment) {
@@ -26,10 +32,6 @@ public class Person {
 
     public int getId() {
         return id;
-    }
-
-    public int getRut() {
-        return rut;
     }
 
     public int getAge() {
